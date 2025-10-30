@@ -15,7 +15,7 @@
       min-height: 100vh;
     }
 
-    /* ===== AUTH SCREEN ===== */
+    /* Auth Screen */
     .auth-screen {
       position: fixed;
       top: 0;
@@ -36,7 +36,7 @@
       border-radius: 12px;
       padding: 40px;
       max-width: 400px;
-      width: 90%;
+      width: 100%;
       box-shadow: 0 20px 60px rgba(0,0,0,0.3);
     }
 
@@ -64,7 +64,6 @@
     .auth-form input:focus {
       border-color: #667eea;
       outline: none;
-      box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
     }
 
     .auth-form button {
@@ -81,25 +80,31 @@
     .auth-form button:hover { background: #764ba2; }
     .auth-form button:disabled { opacity: 0.6; cursor: not-allowed; }
 
+    .auth-toggle {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 14px;
+    }
+
+    .auth-toggle a {
+      color: #667eea;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
     .auth-error {
       background: #fee2e2;
       color: #991b1b;
-      padding: 12px;
+      padding: 10px;
       border-radius: 6px;
-      font-size: 13px;
-      margin-bottom: 15px;
+      font-size: 12px;
+      margin-bottom: 10px;
       display: none;
-      border-left: 4px solid #dc2626;
     }
 
     .auth-error.show { display: block; }
 
-    .auth-loading {
-      text-align: center;
-      color: #667eea;
-    }
-
-    /* ===== MAIN LAYOUT ===== */
+    /* Main Layout */
     .main-layout {
       display: grid;
       grid-template-columns: 250px 1fr;
@@ -108,7 +113,7 @@
 
     .main-layout.hidden { display: none; }
 
-    /* ===== SIDEBAR ===== */
+    /* Sidebar */
     .sidebar {
       background: #1e293b;
       border-right: 1px solid #334155;
@@ -119,11 +124,10 @@
       height: 100vh;
       width: 250px;
       overflow-y: auto;
-      z-index: 100;
     }
 
     .sidebar-logo {
-      font-size: 20px;
+      font-size: 24px;
       font-weight: 700;
       color: #667eea;
       margin-bottom: 30px;
@@ -182,9 +186,7 @@
       font-weight: 600;
     }
 
-    .logout-btn:hover { background: #b91c1c; }
-
-    /* ===== MAIN CONTENT ===== */
+    /* Main Content */
     .main-content {
       margin-left: 250px;
       padding: 20px;
@@ -194,8 +196,12 @@
     .page { display: none; }
     .page.active { display: block; }
 
+    /* Header */
     .page-header {
       margin-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
     .page-header h1 {
@@ -203,7 +209,7 @@
       font-weight: 700;
     }
 
-    /* ===== STATS GRID ===== */
+    /* Cards Grid */
     .stats-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -231,7 +237,7 @@
       color: #667eea;
     }
 
-    /* ===== FORMS ===== */
+    /* Form */
     .form-group {
       margin-bottom: 20px;
     }
@@ -262,6 +268,10 @@
 
     textarea { resize: vertical; min-height: 100px; }
 
+    .file-input-wrapper {
+      position: relative;
+    }
+
     input[type="file"] { display: none; }
 
     .file-label {
@@ -285,7 +295,7 @@
       margin-top: 5px;
     }
 
-    /* ===== BUTTONS ===== */
+    /* Buttons */
     .btn {
       padding: 10px 20px;
       border: none;
@@ -323,7 +333,7 @@
       font-size: 12px;
     }
 
-    /* ===== TABLES ===== */
+    /* Tables */
     .table-container {
       overflow-x: auto;
       background: #1e293b;
@@ -359,7 +369,7 @@
 
     tr:hover { background: #334155; }
 
-    /* ===== MODAL ===== */
+    /* Modal */
     .modal {
       position: fixed;
       top: 0;
@@ -371,7 +381,6 @@
       align-items: center;
       justify-content: center;
       z-index: 1000;
-      padding: 20px;
     }
 
     .modal.active { display: flex; }
@@ -381,7 +390,7 @@
       border-radius: 8px;
       padding: 30px;
       max-width: 600px;
-      width: 100%;
+      width: 90%;
       max-height: 90vh;
       overflow-y: auto;
     }
@@ -403,30 +412,7 @@
       cursor: pointer;
     }
 
-    /* ===== ALERTS ===== */
-    .alert {
-      padding: 12px;
-      border-radius: 6px;
-      margin-bottom: 15px;
-      display: none;
-      font-size: 13px;
-    }
-
-    .alert.show { display: block; }
-
-    .alert-success {
-      background: rgba(16, 185, 129, 0.2);
-      color: #10b981;
-      border-left: 3px solid #10b981;
-    }
-
-    .alert-error {
-      background: rgba(239, 68, 68, 0.2);
-      color: #ef4444;
-      border-left: 3px solid #ef4444;
-    }
-
-    /* ===== PROGRESS ===== */
+    /* Progress */
     .progress-container {
       display: none;
       margin: 15px 0;
@@ -449,72 +435,59 @@
       transition: width 0.3s;
     }
 
-    /* ===== RESPONSIVE ===== */
-    @media (max-width: 768px) {
-      .main-layout {
-        grid-template-columns: 1fr;
-      }
-
-      .sidebar {
-        position: fixed;
-        left: -250px;
-        transition: left 0.3s;
-        width: 250px;
-        z-index: 999;
-      }
-
-      .sidebar.active { left: 0; }
-
-      .main-content {
-        margin-left: 0;
-        padding: 15px;
-      }
-
-      .sidebar-overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(0,0,0,0.5);
-        display: none;
-        z-index: 99;
-      }
-
-      .sidebar-overlay.active { display: block; }
-
-      .page-header h1 { font-size: 20px; }
-
-      .stats-grid {
-        grid-template-columns: 1fr;
-        gap: 15px;
-      }
-
-      .auth-card {
-        padding: 30px 20px;
-      }
-
-      table {
-        font-size: 12px;
-      }
-
-      th, td { padding: 8px; }
-
-      .btn { padding: 8px 12px; font-size: 12px; }
-
-      .modal-content { padding: 20px; }
+    /* Alert */
+    .alert {
+      padding: 12px;
+      border-radius: 6px;
+      margin-bottom: 15px;
+      display: none;
+      font-size: 13px;
     }
 
-    @media (max-width: 480px) {
-      .auth-card { width: 95%; }
-      
-      .page-header h1 { font-size: 18px; }
+    .alert.show { display: block; }
 
+    .alert-success {
+      background: rgba(16, 185, 129, 0.2);
+      color: #10b981;
+      border-left: 3px solid #10b981;
+    }
+
+    .alert-error {
+      background: rgba(239, 68, 68, 0.2);
+      color: #ef4444;
+      border-left: 3px solid #ef4444;
+    }
+
+    /* Debug Console */
+    .debug-console {
+      background: #0f172a;
+      border: 1px solid #334155;
+      border-radius: 6px;
+      padding: 12px;
+      max-height: 300px;
+      overflow-y: auto;
+      font-family: 'Courier New', monospace;
+      font-size: 11px;
+      margin-top: 15px;
+    }
+
+    .debug-console.hidden { display: none; }
+
+    .debug-log {
+      margin: 3px 0;
+      padding: 2px 0;
+    }
+
+    .debug-log.info { color: #4ec9b0; }
+    .debug-log.error { color: #f48771; }
+    .debug-log.success { color: #6a9955; }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .main-layout { grid-template-columns: 1fr; }
+      .sidebar { width: 100%; height: auto; position: relative; }
+      .main-content { margin-left: 0; }
       .stats-grid { grid-template-columns: 1fr; }
-
-      .auth-card h1 { font-size: 24px; }
-
-      .modal-content { padding: 15px; }
     }
   </style>
 </head>
@@ -522,33 +495,44 @@
   <!-- Auth Screen -->
   <div class="auth-screen" id="authScreen">
     <div class="auth-card">
-      <h1>🎬 Admin Panel</h1>
+      <h1>🎬 Video Hub Admin</h1>
       
       <div class="auth-error" id="authError"></div>
 
-      <form class="auth-form" onsubmit="handleLogin(event)">
-        <label style="font-weight: 600; color: #333; text-align: center;">Login to Continue</label>
+      <div id="loginForm" class="auth-form">
+        <h2 style="font-size: 18px; color: #333; margin-bottom: 15px;">Login</h2>
         <input type="email" id="loginEmail" placeholder="Email" required />
         <input type="password" id="loginPassword" placeholder="Password" required />
-        <button type="submit">Login</button>
-        <div id="authLoading" class="auth-loading" style="display: none;">Signing in...</div>
-      </form>
+        <button onclick="handleLogin()">Login</button>
+        <div class="auth-toggle">
+          Don't have account? <a onclick="switchToSignup()">Sign Up</a>
+        </div>
+      </div>
+
+      <div id="signupForm" class="auth-form" style="display: none;">
+        <h2 style="font-size: 18px; color: #333; margin-bottom: 15px;">Sign Up</h2>
+        <input type="email" id="signupEmail" placeholder="Email" required />
+        <input type="password" id="signupPassword" placeholder="Password (min 6 chars)" required />
+        <input type="password" id="signupConfirm" placeholder="Confirm Password" required />
+        <button onclick="handleSignup()">Create Account</button>
+        <div class="auth-toggle">
+          Already have account? <a onclick="switchToLogin()">Login</a>
+        </div>
+      </div>
     </div>
   </div>
-
-  <!-- Sidebar Overlay (Mobile) -->
-  <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
 
   <!-- Main Layout -->
   <div class="main-layout" id="mainLayout">
     <!-- Sidebar -->
-    <div class="sidebar" id="sidebar">
+    <div class="sidebar">
       <div class="sidebar-logo">🎬 Admin</div>
       
       <div class="nav-menu">
         <div class="nav-item active" onclick="switchPage('dashboard')">📊 Dashboard</div>
-        <div class="nav-item" onclick="switchPage('upload')">📤 Upload</div>
-        <div class="nav-item" onclick="switchPage('videos')">📺 Videos</div>
+        <div class="nav-item" onclick="switchPage('upload')">📤 Upload Video</div>
+        <div class="nav-item" onclick="switchPage('videos')">📺 Manage Videos</div>
+        <div class="nav-item" onclick="switchPage('settings')">⚙️ Settings</div>
       </div>
 
       <div class="sidebar-footer">
@@ -560,10 +544,10 @@
     <!-- Main Content -->
     <div class="main-content">
       
-      <!-- DASHBOARD -->
+      <!-- DASHBOARD PAGE -->
       <div class="page active" id="dashboardPage">
         <div class="page-header">
-          <h1>📊 Dashboard</h1>
+          <h1>Dashboard</h1>
         </div>
 
         <div class="stats-grid">
@@ -583,33 +567,32 @@
 
         <div style="background: #1e293b; border: 1px solid #334155; border-radius: 8px; padding: 20px;">
           <h2 style="font-size: 18px; margin-bottom: 15px;">Recent Videos</h2>
-          <div class="table-container">
-            <table id="recentVideosTable">
-              <thead>
-                <tr>
-                  <th>Title</th>
-                  <th>Tags</th>
-                  <th>Action</th>
-                </tr>
-              </thead>
-              <tbody id="recentVideosBody"></tbody>
-            </table>
-          </div>
+          <table id="recentVideosTable">
+            <thead>
+              <tr>
+                <th>Title</th>
+                <th>Tags</th>
+                <th>Date</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="recentVideosBody"></tbody>
+          </table>
         </div>
       </div>
 
-      <!-- UPLOAD -->
+      <!-- UPLOAD PAGE -->
       <div class="page" id="uploadPage">
         <div class="page-header">
-          <h1>📤 Upload Video</h1>
+          <h1>Upload New Video</h1>
         </div>
 
         <div id="uploadAlert" class="alert"></div>
 
-        <form id="uploadForm" style="background: #1e293b; border: 1px solid #334155; border-radius: 8px; padding: 20px; max-width: 100%;">
+        <form id="uploadForm" style="background: #1e293b; border: 1px solid #334155; border-radius: 8px; padding: 20px; max-width: 600px;">
           <div class="form-group">
             <label>Thumbnail (JPG/PNG) *</label>
-            <div>
+            <div class="file-input-wrapper">
               <input type="file" id="thumbnailFile" accept="image/jpeg,image/png" required />
               <label for="thumbnailFile" class="file-label">🖼️ Choose Thumbnail</label>
               <div class="file-name" id="thumbnailFileName"></div>
@@ -618,7 +601,7 @@
 
           <div class="form-group">
             <label>Video (MP4/WebM) *</label>
-            <div>
+            <div class="file-input-wrapper">
               <input type="file" id="videoFile" accept="video/mp4,video/webm" required />
               <label for="videoFile" class="file-label">📹 Choose Video</label>
               <div class="file-name" id="videoFileName"></div>
@@ -644,14 +627,16 @@
             <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
           </div>
 
-          <button type="submit" class="btn btn-primary" style="width: 100%;">Upload Video</button>
+          <button type="submit" class="btn btn-primary">Upload Video</button>
         </form>
+
+        <div class="debug-console hidden" id="uploadDebug"></div>
       </div>
 
-      <!-- VIDEOS -->
+      <!-- VIDEOS PAGE -->
       <div class="page" id="videosPage">
         <div class="page-header">
-          <h1>📺 Manage Videos</h1>
+          <h1>Manage Videos</h1>
         </div>
 
         <div id="videosAlert" class="alert"></div>
@@ -674,6 +659,41 @@
         </div>
       </div>
 
+      <!-- SETTINGS PAGE -->
+      <div class="page" id="settingsPage">
+        <div class="page-header">
+          <h1>Settings</h1>
+        </div>
+
+        <div style="background: #1e293b; border: 1px solid #334155; border-radius: 8px; padding: 20px; max-width: 600px;">
+          <h2 style="font-size: 18px; margin-bottom: 20px;">Account Settings</h2>
+
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" id="settingsEmail" disabled />
+          </div>
+
+          <div class="form-group">
+            <label>Change Password</label>
+            <input type="password" id="newPassword" placeholder="New Password" />
+          </div>
+
+          <button class="btn btn-primary" onclick="updatePassword()">Update Password</button>
+
+          <hr style="border: 1px solid #334155; margin: 30px 0;">
+
+          <h2 style="font-size: 18px; margin-bottom: 20px;">Debug Options</h2>
+
+          <label>
+            <input type="checkbox" id="debugToggle" onchange="toggleDebug()" />
+            Show Debug Console on Upload
+          </label>
+
+          <button class="btn btn-secondary" onclick="clearCache()" style="margin-top: 15px;">Clear Cache</button>
+          <button class="btn btn-danger" onclick="handleLogout()" style="margin-top: 15px;">Logout</button>
+        </div>
+      </div>
+
     </div>
   </div>
 
@@ -685,7 +705,7 @@
         <button class="modal-close" onclick="closeEditModal()">×</button>
       </div>
 
-      <form id="editForm" onsubmit="saveEditedVideo(event)">
+      <form id="editForm">
         <div class="form-group">
           <label>Title *</label>
           <input type="text" id="editTitle" required />
@@ -728,6 +748,7 @@
     };
 
     let app, auth, db, currentUser;
+    let debugMode = localStorage.getItem('debugMode') === 'true';
     let currentEditingVideoId = null;
     let allVideos = [];
 
@@ -740,6 +761,35 @@
       console.error('Firebase error:', error);
     }
 
+    // ========== DEBUG LOGGING ==========
+    const debugLogs = [];
+
+    function addDebugLog(message, type = 'info') {
+      const timestamp = new Date().toLocaleTimeString();
+      const logEntry = `[${timestamp}] ${message}`;
+      debugLogs.push({ message: logEntry, type });
+      
+      const debugEl = document.getElementById('uploadDebug');
+      if (debugEl) {
+        debugEl.innerHTML += `<div class="debug-log ${type}">${logEntry}</div>`;
+        debugEl.scrollTop = debugEl.scrollHeight;
+      }
+      
+      console.log(`[${type.toUpperCase()}] ${message}`);
+    }
+
+    function toggleDebug() {
+      debugMode = document.getElementById('debugToggle').checked;
+      localStorage.setItem('debugMode', debugMode);
+      
+      const debugEl = document.getElementById('uploadDebug');
+      if (debugMode) {
+        debugEl.classList.remove('hidden');
+      } else {
+        debugEl.classList.add('hidden');
+      }
+    }
+
     // ========== AUTH ==========
     auth.onAuthStateChanged((user) => {
       currentUser = user;
@@ -748,6 +798,7 @@
         document.getElementById('authScreen').classList.add('hidden');
         document.getElementById('mainLayout').classList.remove('hidden');
         document.getElementById('userEmail').textContent = user.email;
+        document.getElementById('settingsEmail').value = user.email;
         loadDashboard();
         loadAllVideos();
       } else {
@@ -758,13 +809,12 @@
 
     function showAuthError(message) {
       const errorEl = document.getElementById('authError');
-      errorEl.textContent = '❌ ' + message;
+      errorEl.textContent = message;
       errorEl.classList.add('show');
       setTimeout(() => errorEl.classList.remove('show'), 5000);
     }
 
-    function handleLogin(event) {
-      event.preventDefault();
+    function handleLogin() {
       const email = document.getElementById('loginEmail').value;
       const password = document.getElementById('loginPassword').value;
 
@@ -773,25 +823,76 @@
         return;
       }
 
-      const authLoading = document.getElementById('authLoading');
-      authLoading.style.display = 'block';
-
       auth.signInWithEmailAndPassword(email, password)
+        .catch(error => {
+          showAuthError(error.message);
+          console.error(error);
+        });
+    }
+
+    function handleSignup() {
+      const email = document.getElementById('signupEmail').value;
+      const password = document.getElementById('signupPassword').value;
+      const confirm = document.getElementById('signupConfirm').value;
+
+      if (!email || !password || !confirm) {
+        showAuthError('Please fill all fields');
+        return;
+      }
+
+      if (password !== confirm) {
+        showAuthError('Passwords do not match');
+        return;
+      }
+
+      if (password.length < 6) {
+        showAuthError('Password must be at least 6 characters');
+        return;
+      }
+
+      auth.createUserWithEmailAndPassword(email, password)
         .then(() => {
-          authLoading.style.display = 'none';
+          showAuthError('Account created! Please login.');
+          switchToLogin();
         })
         .catch(error => {
-          authLoading.style.display = 'none';
           showAuthError(error.message);
+          console.error(error);
         });
     }
 
     function handleLogout() {
-      if (confirm('Are you sure you want to logout?')) {
-        auth.signOut();
-        document.getElementById('loginEmail').value = '';
-        document.getElementById('loginPassword').value = '';
+      auth.signOut();
+      document.getElementById('loginEmail').value = '';
+      document.getElementById('loginPassword').value = '';
+    }
+
+    function updatePassword() {
+      const newPassword = document.getElementById('newPassword').value;
+
+      if (!newPassword || newPassword.length < 6) {
+        alert('Password must be at least 6 characters');
+        return;
       }
+
+      currentUser.updatePassword(newPassword)
+        .then(() => {
+          alert('✓ Password updated successfully');
+          document.getElementById('newPassword').value = '';
+        })
+        .catch(error => {
+          alert('✗ Error: ' + error.message);
+        });
+    }
+
+    function switchToSignup() {
+      document.getElementById('loginForm').style.display = 'none';
+      document.getElementById('signupForm').style.display = 'flex';
+    }
+
+    function switchToLogin() {
+      document.getElementById('loginForm').style.display = 'flex';
+      document.getElementById('signupForm').style.display = 'none';
     }
 
     // ========== NAVIGATION ==========
@@ -802,21 +903,9 @@
       document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
       event.target.classList.add('active');
 
-      closeSidebar();
-
       if (page === 'videos') {
         loadAllVideos();
       }
-    }
-
-    function toggleSidebar() {
-      document.getElementById('sidebar').classList.toggle('active');
-      document.getElementById('sidebarOverlay').classList.toggle('active');
-    }
-
-    function closeSidebar() {
-      document.getElementById('sidebar').classList.remove('active');
-      document.getElementById('sidebarOverlay').classList.remove('active');
     }
 
     // ========== DASHBOARD ==========
@@ -839,11 +928,13 @@
           document.getElementById('lastUpload').textContent = date.toLocaleDateString();
         }
 
+        // Recent videos
         const tbody = document.getElementById('recentVideosBody');
         tbody.innerHTML = videos.slice(0, 5).map(v => `
           <tr>
-            <td><strong>${v.title}</strong></td>
+            <td>${v.title}</td>
             <td>${v.tags?.join(', ') || 'N/A'}</td>
+            <td>${(v.uploadDate?.toDate?.() || new Date()).toLocaleDateString()}</td>
             <td><button class="btn btn-primary btn-small" onclick="editVideo('${v.id}')">Edit</button></td>
           </tr>
         `).join('');
@@ -861,10 +952,10 @@
         const tbody = document.getElementById('videosBody');
         tbody.innerHTML = allVideos.map(v => `
           <tr>
-            <td><img src="${v.thumbnailUrl}" style="width: 40px; height: 40px; object-fit: cover; border-radius: 4px;"/></td>
+            <td><img src="${v.thumbnailUrl}" style="width: 50px; height: 50px; object-fit: cover; border-radius: 4px;"/></td>
             <td>${v.title}</td>
-            <td>${v.description.substring(0, 30)}...</td>
-            <td>${v.tags?.slice(0, 2).join(', ') || 'N/A'}</td>
+            <td>${v.description.substring(0, 50)}...</td>
+            <td>${v.tags?.join(', ') || 'N/A'}</td>
             <td>
               <button class="btn btn-primary btn-small" onclick="editVideo('${v.id}')">Edit</button>
               <button class="btn btn-danger btn-small" onclick="deleteVideo('${v.id}')">Delete</button>
@@ -873,7 +964,8 @@
         `).join('');
       } catch (error) {
         console.error('Load videos error:', error);
-        showVideoAlert('Error loading videos', 'error');
+        document.getElementById('videosAlert').textContent = 'Error loading videos';
+        document.getElementById('videosAlert').classList.add('show', 'alert-error');
       }
     }
 
@@ -894,8 +986,8 @@
       currentEditingVideoId = null;
     }
 
-    async function saveEditedVideo(event) {
-      event.preventDefault();
+    document.getElementById('editForm')?.addEventListener('submit', async (e) => {
+      e.preventDefault();
 
       if (!currentEditingVideoId) return;
 
@@ -914,14 +1006,13 @@
         alert('✓ Video updated successfully');
         closeEditModal();
         loadAllVideos();
-        loadDashboard();
       } catch (error) {
         alert('✗ Error: ' + error.message);
       }
-    }
+    });
 
     async function deleteVideo(videoId) {
-      if (!confirm('⚠️ Are you sure? This cannot be undone.')) return;
+      if (!confirm('Are you sure you want to delete this video?')) return;
 
       try {
         await db.collection('videos').doc(videoId).delete();
@@ -933,15 +1024,10 @@
       }
     }
 
-    function showVideoAlert(message, type) {
-      const alertEl = document.getElementById('videosAlert');
-      alertEl.textContent = message;
-      alertEl.className = `alert show alert-${type}`;
-      setTimeout(() => alertEl.classList.remove('show'), 4000);
-    }
-
     // ========== UPLOAD ==========
     async function uploadToCloudinary(file, resourceType = 'auto') {
+      if (debugMode) addDebugLog(`Uploading ${resourceType}: ${file.name}`, 'info');
+
       return new Promise((resolve, reject) => {
         const formData = new FormData();
         formData.append('file', file);
@@ -964,21 +1050,27 @@
             try {
               const response = JSON.parse(xhr.responseText);
               if (response.secure_url) {
+                if (debugMode) addDebugLog(`✓ ${resourceType} uploaded`, 'success');
                 resolve({ url: response.secure_url, public_id: response.public_id });
               } else if (response.error) {
+                if (debugMode) addDebugLog(`✗ Cloudinary error: ${response.error.message}`, 'error');
                 reject(new Error(`Cloudinary: ${response.error.message}`));
               } else {
-                reject(new Error('No URL in response'));
+                if (debugMode) addDebugLog(`✗ No URL in response`, 'error');
+                reject(new Error('No secure_url in response'));
               }
             } catch (e) {
+              if (debugMode) addDebugLog(`✗ JSON error: ${e.message}`, 'error');
               reject(e);
             }
           } else {
+            if (debugMode) addDebugLog(`✗ Status ${xhr.status}`, 'error');
             reject(new Error(`Upload failed: ${xhr.status}`));
           }
         });
 
         xhr.addEventListener('error', () => {
+          if (debugMode) addDebugLog('✗ Network error', 'error');
           reject(new Error('Network error'));
         });
 
@@ -989,6 +1081,13 @@
 
     document.getElementById('uploadForm').addEventListener('submit', async (e) => {
       e.preventDefault();
+
+      if (debugMode) {
+        document.getElementById('uploadDebug').classList.remove('hidden');
+        debugLogs.length = 0;
+        document.getElementById('uploadDebug').innerHTML = '<div class="debug-log info">📍 Upload started</div>';
+        addDebugLog('UPLOAD STARTED', 'info');
+      }
 
       const videoFile = document.getElementById('videoFile').files[0];
       const thumbnailFile = document.getElementById('thumbnailFile').files[0];
@@ -1007,12 +1106,15 @@
       try {
         document.getElementById('uploadProgress').classList.add('show');
 
+        if (debugMode) addDebugLog('Uploading thumbnail...', 'info');
         const thumbResult = await uploadToCloudinary(thumbnailFile, 'image');
         const thumbnailUrl = thumbResult.url;
 
+        if (debugMode) addDebugLog('Uploading video...', 'info');
         const videoResult = await uploadToCloudinary(videoFile, 'video');
         const videoUrl = videoResult.url;
 
+        if (debugMode) addDebugLog('Saving to Firestore...', 'info');
         await db.collection('videos').add({
           videoUrl,
           thumbnailUrl,
@@ -1022,18 +1124,19 @@
           uploadDate: firebase.firestore.FieldValue.serverTimestamp()
         });
 
+        if (debugMode) addDebugLog('✓ UPLOAD COMPLETE', 'success');
         showUploadAlert('✓ Video uploaded successfully!', 'success');
 
         document.getElementById('uploadForm').reset();
         document.getElementById('videoFileName').textContent = '';
         document.getElementById('thumbnailFileName').textContent = '';
         document.getElementById('uploadProgress').classList.remove('show');
-        document.getElementById('progressFill').style.width = '0%';
 
         loadDashboard();
         loadAllVideos();
 
       } catch (error) {
+        if (debugMode) addDebugLog(`✗ FAILED: ${error.message}`, 'error');
         showUploadAlert(`✗ ${error.message}`, 'error');
       } finally {
         uploadBtn.disabled = false;
@@ -1050,19 +1153,28 @@
     }
 
     // ========== FILE INPUTS ==========
-    document.getElementById('videoFile').addEventListener('change', (e) => {
+    document.getElementById('videoFile')?.addEventListener('change', (e) => {
       const file = e.target.files[0];
       if (file) {
         document.getElementById('videoFileName').textContent = `${file.name} (${(file.size / 1024 / 1024).toFixed(2)} MB)`;
       }
     });
 
-    document.getElementById('thumbnailFile').addEventListener('change', (e) => {
+    document.getElementById('thumbnailFile')?.addEventListener('change', (e) => {
       const file = e.target.files[0];
       if (file) {
         document.getElementById('thumbnailFileName').textContent = `${file.name} (${(file.size / 1024).toFixed(2)} KB)`;
       }
     });
+
+    // ========== MISC ==========
+    function clearCache() {
+      localStorage.clear();
+      alert('✓ Cache cleared');
+    }
+
+    // Initialize
+    document.getElementById('debugToggle').checked = debugMode;
   </script>
 </body>
 </html>
